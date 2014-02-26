@@ -1,0 +1,75 @@
+\documentclass{article}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+\section{Coding Styleguide}
+
+\subsection{Einleitung}
+
+Die Python-Community legte schon von Beginn an viel Wert auf Lesbarkeit und
+Konsistenz von Source Code. Dazu gehört auch ein einheitlicher Code-Stil.  Guido
+van Rossum, der Autor von Python, schrieb deshalb seine Vorstellungen von
+sauberem Code in einem \textit{Style Guide for Python Code} nieder. Dieser Style
+Guide wurde im Jahr 2001 als Python Enhancement Proposal 8 -- kurz PEP8 --
+veröffentlicht\footnote{\url{https://python.org/dev/peps/pep-0008/}}.
+
+Der PEP8 Style Guide hat seit dann beinahe universelle Verbreitung gefunden.
+Einer der zentralsten Punkte daraus -- die Verwendung von 4 Spaces anstelle von
+Tabs -- wird gemäss einem
+Analysetool\footnote{\url{http://sideeffect.kr/popularconvention#python}} in
+95\% der Projekte auf Github so umgesetzt. Im Rahmen dieser Bachelorarbeit
+werden wir daher auch gemäss diesen Richtlinien arbeiten, mit einigen kleinen
+Anpassungen.
+
+\subsection{Coding Guidelines}
+
+PEP8 ist in unserer Software verbindlich, mit folgenden Ausnahmen:
+
+\begin{itemize}
+	\item Maximale Zeilenlänge ist 99 Zeichen, nicht 79. Heutige Bildschirme sind
+		viel grösser, es ergibt keinen Sinn Code umzubrechen um innerhalb der
+		80-Zeichen-Grenze zu bleiben wenn dadurch der Code weniger gut lesbar wird.
+	\item Folgende Einrückungsregeln in den Code-Checking-Tools können in gewissen
+		Fällen zu schlechter lesbarem Code führen und können deshalb ignoriert
+		werden: \textit{E126}, \textit{E127}, \textit{E128}.
+\end{itemize}
+
+\subsection{Tools}
+
+\subsubsection{Flake8}
+
+Flake8 (\url{https://flake8.readthedocs.org/en/2.0/}) verbindet das Style
+Checking Tool pep8\footnote{\url{}} mit dem Static Code Analysis Tool
+pyflakes\footnote{\url{}}. Für unser Projekt kann folgende Konfiguration
+(\texttt{~/.config/flake8}) verwendet werden:
+
+\begin{verbatim}
+[flake8]
+ignore = E126,E127,E128
+max-line-length = 99
+\end{verbatim}
+
+\subsubsection{Pytest}
+
+Zum von uns verwendeten Testing-Framework Pytest\footnote{\url{}} gibt es ein
+PEP8 Plugin. Wird dieses aktiviert, werden Style Guide Violations als
+Fehlerhafte Tests gewertet. Folgende Konfiguration wird dafür in
+\texttt{pytest.ini} verwendet:
+
+\begin{verbatim}
+[pytest]
+addopts = --pep8
+pep8ignore =
+    *.py E126 E127 E128
+    setup.py ALL
+    settings.py ALL
+    urls.py ALL
+    */migrations/* ALL
+    */tests/* ALL
+pep8maxlinelength = 99
+\end{verbatim}
+
+\end{document}
