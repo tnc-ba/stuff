@@ -10,32 +10,30 @@ First, get vagrant: http://www.vagrantup.com/
 
 Then clone both repositories stuff and swidGenerator:
     
-	git clone https://github.com/tnc-ba/swidGenerator
-	git clone https://github.com/tnc-ba/stuff
-	
-
-
+    git clone https://github.com/tnc-ba/swidGenerator
+    git clone https://github.com/tnc-ba/stuff
+    
 Setup up box:
 
     cd /path/to/stuff/
     vagrant up
-	
+    
 Finally SSH into virtual machine:
 
     vagrant ssh
-	
+    
 Gracefully Shutdown VM:
 
-	vagrant halt
-	
+    vagrant halt
+    
 Or destroy it:
-	
-	vagrant destroy
-	
+    
+    vagrant destroy
+    
 Changes to the bootstrap.sh provisioning script can be applied without destroy and recreating VM
-	
-	vagrant reload --provision
-	
+    
+    vagrant reload --provision
+    
 Config
 -------
 
