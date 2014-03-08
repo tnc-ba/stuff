@@ -1,3 +1,8 @@
 *.aux
 *.log
 .vagrant/*
+*.swp
+*.log
+*.out
+*.dvi
+coding_styleguide.pdf

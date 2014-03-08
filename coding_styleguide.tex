@@ -2,6 +2,7 @@
 
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{hyperref}
 
 \begin{document}
 
@@ -19,7 +20,7 @@ veröffentlicht\footnote{\url{https://python.org/dev/peps/pep-0008/}}.
 Der PEP8 Style Guide hat seit dann beinahe universelle Verbreitung gefunden.
 Einer der zentralsten Punkte daraus -- die Verwendung von 4 Spaces anstelle von
 Tabs -- wird gemäss einem
-Analysetool\footnote{\url{http://sideeffect.kr/popularconvention#python}} in
+Analysetool\footnote{\url{http://sideeffect.kr/popularconvention\#python}} in
 95\% der Projekte auf Github so umgesetzt. Im Rahmen dieser Bachelorarbeit
 werden wir daher auch gemäss diesen Richtlinien arbeiten, mit einigen kleinen
 Anpassungen.
@@ -42,9 +43,11 @@ PEP8 ist in unserer Software verbindlich, mit folgenden Ausnahmen:
 \subsubsection{Flake8}
 
 Flake8 (\url{https://flake8.readthedocs.org/en/2.0/}) verbindet das Style
-Checking Tool pep8\footnote{\url{}} mit dem Static Code Analysis Tool
-pyflakes\footnote{\url{}}. Für unser Projekt kann folgende Konfiguration
-(\texttt{~/.config/flake8}) verwendet werden:
+Checking Tool pep8\footnote{\url{https://pypi.python.org/pypi/pep8}} mit dem
+Static Code Analysis Tool
+pyflakes\footnote{\url{https://pypi.python.org/pypi/pyflakes}}. Für unser
+Projekt kann folgende Konfiguration (\texttt{~/.config/flake8}) verwendet
+werden:
 
 \begin{verbatim}
 [flake8]
@@ -54,10 +57,10 @@ max-line-length = 99
 
 \subsubsection{Pytest}
 
-Zum von uns verwendeten Testing-Framework Pytest\footnote{\url{}} gibt es ein
-PEP8 Plugin. Wird dieses aktiviert, werden Style Guide Violations als
-Fehlerhafte Tests gewertet. Folgende Konfiguration wird dafür in
-\texttt{pytest.ini} verwendet:
+Zum von uns verwendeten Testing-Framework
+Pytest\footnote{\url{http://pytest.org/}} gibt es ein PEP8 Plugin. Wird dieses
+aktiviert, werden Style Guide Violations als Fehlerhafte Tests gewertet.
+Folgende Konfiguration wird dafür in \texttt{pytest.ini} verwendet:
 
 \begin{verbatim}
 [pytest]
