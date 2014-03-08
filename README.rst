@@ -32,7 +32,7 @@ Or destroy it:
 	
 	vagrant destroy
 	
-Changed to the bootstrap.sh provisioning script can be applied without destroy and recreating VM
+Changes to the bootstrap.sh provisioning script can be applied without destroy and recreating VM
 	
 	vagrant reload --provision
 	
