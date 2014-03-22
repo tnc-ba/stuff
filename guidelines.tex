@@ -161,6 +161,14 @@ werden.
 Alles zum verändern der Git History findet sich hier:
 \url{http://git-scm.com/book/en/Git-Tools-Rewriting-History} Pflichtlektüre!
 
+\subsubsection{Pulling}
+
+Beim \texttt{git pull} ist es sinnvoll, immer den \texttt{--rebase} Parameter zu
+verwenden. Bei einem Konflikt durch neue Remote Commits wird dann nämlich lokal
+rebased statt merged. Da der lokale Code noch nicht publiziert wurde, ist dies
+unbedenklich. Ein Rebase-Konflikt kann bei Problemen jederzeit mit \texttt{git
+rebase --abort} abgebrochen werden.
+
 \subsubsection{Force Pushing}
 
 Während der Entwicklungsphase in einem Branch ist es kein Problem wenn man
