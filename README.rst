@@ -15,7 +15,7 @@ Then clone both repositories stuff and swidGenerator:
     
 Setup up box:
 
-    cd /path/to/stuff/
+    cd /path/to/stuff/Vagrant
     vagrant up
     
 Finally SSH into virtual machine:
