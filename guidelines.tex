@@ -39,9 +39,11 @@ PEP8 ist in unserer Software verbindlich, mit folgenden Ausnahmen:
 	\item Maximale Zeilenlänge ist 109 Zeichen, nicht 79. Heutige Bildschirme sind
 		viel grösser, es ergibt keinen Sinn Code umzubrechen um innerhalb der
 		80-Zeichen-Grenze zu bleiben wenn dadurch der Code weniger gut lesbar wird.
-	\item Folgende Einrückungsregeln in den Code-Checking-Tools können in gewissen
-		Fällen zu schlechter lesbarem Code führen und können deshalb ignoriert
-		werden: \textit{E126}, \textit{E127}, \textit{E128}.
+	\item Folgende
+		Einrückungsregeln\footnote{\url{http://pep8.readthedocs.org/en/latest/intro.html#error-codes}}
+		in den Code-Checking-Tools können in gewissen Fällen zu schlechter lesbarem
+		Code führen und können deshalb ignoriert werden: \textit{E126},
+		\textit{E127}, \textit{E128}.
 \end{itemize}
 
 \subsection{Tools}
@@ -90,11 +92,11 @@ Ein Task gilt als abgeschlossen, wenn folgende Punkte erfüllt sind:
 	\item Alle Arbeiten gemäss Task-Beschreibung wurden ausgeführt.
 	\item Der Code wurde auf Github in einen Feature Branch committed.
 	\item Der Code wurde von einem Teammitglied reviewed.
-	\item Der Feature Branch wurde in den Master Branch gemerged.
 	\item Der Code ist sinnvoll kommentiert, Docstrings für Funktionen und Klassen sind vorhanden.
 	\item Flake8 zeigt keine Fehler oder Warnungen.
 	\item Tests existieren wo sinnvoll. Die Testsuite läuft erfolgreich durch.
 	\item Dokumentation wurde nachgeführt.
+	\item Der Feature Branch wurde in den Master Branch gemerged.
 	\item Die benötigte Arbeitszeit wurde erfasst.
 \end{itemize}
 
