@@ -1,36 +1,36 @@
 stuff
 =====
 
-Dinge wie Vagrant files, Konfigurationen, etc...
+stuff like Vagrant files, configs, etc...
 
 Development Setup
 ------------------
 
 First, get vagrant: http://www.vagrantup.com/
 
-Then clone both repositories stuff and swidGenerator:
+Then clone both repositories stuff and swidGenerator: ::
     
     git clone https://github.com/tnc-ba/swidGenerator
     git clone https://github.com/tnc-ba/stuff
     
-Setup up box:
+Setup up box: ::
 
     cd /path/to/stuff/Vagrant
     vagrant up
     
-Finally SSH into virtual machine:
+Finally SSH into virtual machine: ::
 
     vagrant ssh
     
-Gracefully Shutdown VM:
+Gracefully Shutdown VM: ::
 
     vagrant halt
     
-Or destroy it:
+Or destroy it: ::
     
     vagrant destroy
     
-Changes to the bootstrap.sh provisioning script can be applied without destroy and recreating VM
+Changes to the bootstrap.sh provisioning script can be applied without destroy and recreating VM: ::
     
     vagrant reload --provision
     
