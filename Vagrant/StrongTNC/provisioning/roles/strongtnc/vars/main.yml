@@ -1,0 +1,6 @@
+---
+strongtnc_dir: /var/www/strongTNC
+strongtnc_etc: /etc/strongTNC
+strongtnc_repo: https://github.com/tnc-ba/strongTNC.git
+strongtnc_branch: deployment_conf
+strongtnc_hostname: localhost:8080
