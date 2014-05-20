@@ -23,6 +23,8 @@ WSGIPythonPath {{ strongtnc_dir }}:{{ strongtnc_dir }}/VIRTUAL/lib/python2.7/sit
 	
 	WSGIScriptAlias / {{ strongtnc_dir }}/config/wsgi.py
 	Alias /static/ {{ strongtnc_dir }}/static/	
+
+	WSGIPassAuthorization On
 	
 	ErrorLog ${APACHE_LOG_DIR}/error.log
 	CustomLog ${APACHE_LOG_DIR}/access.log combined
