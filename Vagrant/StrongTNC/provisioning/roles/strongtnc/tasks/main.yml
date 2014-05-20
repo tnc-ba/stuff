@@ -29,7 +29,9 @@
     state=latest virtualenv=VIRTUAL
 
 - name: Copy settings.ini.
+  sudo: yes
   template: src=settings.ini.j2 dest={{ strongtnc_etc }}/settings.ini
+    owner={{ ansible_ssh_user }} group=www-data mode=0640
   notify: restart apache
 
 - name: Chmod database files.
