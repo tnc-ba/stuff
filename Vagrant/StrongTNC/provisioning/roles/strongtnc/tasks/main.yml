@@ -9,6 +9,7 @@
     - python2.7-dev
     - python-pip
     - python-virtualenv
+    - python-mysqldb
     - libxml2-dev
     - libxslt1-dev
 
@@ -30,16 +31,17 @@
 
 - name: Copy settings.ini.
   sudo: yes
-  template: src=settings.ini.j2 dest={{ strongtnc_etc }}/settings.ini
+  template: src=settings.ini.{{ database }}.j2 dest={{ strongtnc_etc }}/settings.ini
     owner={{ ansible_ssh_user }} group=www-data mode=0640
   notify: restart apache
 
-- name: Chmod database files.
-  sudo: yes
-  file: path={{ strongtnc_dir }}/{{ item }} state=file group=www-data mode=0660
-  with_items:
-    - django.db
-    - ipsec.config.db
+- name: Setup SQLite.
+  include: sqlite.yml
+  when: database != "mysql"
+
+- name: Setup MySQL.
+  include: mysql.yml
+  when: database == "mysql"
 
 - name: Run collectstatic.
   django_manage: command=collectstatic
